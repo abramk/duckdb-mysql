@@ -10,6 +10,7 @@ set(MYSQL_INCLUDE_DIR
 include_directories(${MYSQL_INCLUDE_DIR})
 
 add_subdirectory(src)
+add_library(${EXTENSION_NAME} STATIC ${EXTENSION_OBJECT_FILES})
 
 set(PARAMETERS "-no-warnings")
 build_loadable_extension(${TARGET_NAME} ${PARAMETERS} ${ALL_OBJECT_FILES})
